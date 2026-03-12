@@ -14,6 +14,7 @@
         .paper-meta { color: #666; font-size: 0.9em; display: block; margin: 4px 0; }
         .code-block { background: #1e1e1e; color: #dcdcdc; padding: 15px; border-radius: 5px; font-family: 'Consolas', monospace; font-size: 0.85em; overflow-x: auto; margin-top: 15px; display: none; border-left: 4px solid #3498db; }
         .toggle-btn { background: #f0f7ff; border: 1px solid #3498db; color: #3498db; padding: 6px 12px; cursor: pointer; border-radius: 4px; font-size: 0.8em; font-weight: 600; }
+        .toggle-btn:hover { background: #3498db; color: white; }
         .tech-tag { display: inline-block; background: #ebf5fb; color: #2980b9; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; margin-right: 6px; font-weight: 600; }
         a { color: #3498db; text-decoration: none; }
         .bullet { margin-left: 20px; font-size: 0.9em; color: #555; display: block; margin-top: 5px; }
@@ -31,82 +32,71 @@
     
     <div class="section">
         <h2>About</h2>
-        <p>Applied economist with three years of experience at the International Monetary Fund (APD & SPR). I specialize in reproducible empirical frameworks, sovereign debt sustainability, and industrial policy analysis.</p>
+        <p>Applied economist with three years of institutional experience at the International Monetary Fund (APD & SPR). Specializing in reproducible empirical frameworks, sovereign debt sustainability, and industrial policy analysis.</p>
     </div>
     
     <div class="section">
         <h2>Selected Publications & Research</h2>
 
         <div class="paper-item">
-            <span class="tech-tag">Python (NLP)</span>
+            <span class="tech-tag">Python (Data Engineering)</span>
             <span class="paper-title">“Industrial Policy in Asia” (Forthcoming)</span>
             <span class="paper-meta">IMF Asia in 2050 Conference | Asia-Pacific Department (APD)</span>
-            <span class="bullet">• Constructed a novel industrial policy dataset using Python-based text analytics on Global Trade Alerts.</span>
-            <button class="toggle-btn" onclick="toggleCode('code1')">View Code</button>
+            <button class="toggle-btn" onclick="toggleCode('code1')">View Full Technical Implementation</button>
             <div id="code1" class="code-block">
-# @modified by AXie2: Main formatting raw GTA data to policy mapping
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr 8 14:42:08 2025
+@author: AG | @modified and updated by AXie2
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from datetime import datetime
+import os
+import warnings
+
+warnings.filterwarnings('ignore')
+pd.options.mode.chained_assignment = None
+
+# Directory Setup
+maindir="H:/Data/Regional/ArthurXie/R_IPWG/Data/working/Input/GTA_explore"
+datadir="H:/Data/Regional/ArthurXie/R_IPWG/Data/working/Input"
+outdir="H:/Data/Regional/ArthurXie/R_IPWG/Data/working/Output"
+
 from GTA_format_func_CL_batch_ax import *
 
+# Main formatting: Raw GTA data to policy mapping
 gta_hs = hs_to_long()
 gta_cpc = format_cpc()
-gta_hs_fill = cpc_hs_convert(gta_hs, gta_cpc, cpc_hs)
+AJ_append = AJ_string()
+gta_hs_fill = cpc_hs_convert(gta_hs, gta_cpc, pd.read_csv(datadir + '/correspondence tables/cpc21-hs2012.txt', dtype=str))
+gta_hs_full = add_variables(gta_hs_fill, AJ_append)
+gta_cpc_full = add_cpc_variables(gta_hs_full, gta_cpc)
+gta_hs_4dig = hs_4dig(gta_hs_full)
 
-# Dimensionality reduction: 4-digit HS
-gta_hs_4dig = hs_4dig(add_variables(gta_hs_fill, AJ_string()))
-gta_hs_4dig.to_csv(f"gta_hs4digit_CL_v2-{timestamp}.csv", index=False)
+# Export with Timestamp for Reproducibility
+timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+gta_hs_full.to_csv(f"{outdir}/gta_hs_full_v2-{timestamp}.csv", index=False)
+gta_cpc_full.to_csv(f"{outdir}/gta_cpc_full_v2-{timestamp}.csv", index=False)
             </div>
         </div>
 
         <div class="paper-item">
             <span class="paper-title">“Navigating Trade Headwinds and Rebalancing Growth”</span>
-            <span class="paper-meta">IMF Asia-Pacific Regional Economic Outlook (Oct 2025)</span>
-            <a href="https://www.elibrary.imf.org/display/book/9798229025881/front-1.xml">Access Publication &rarr;</a>
+            <a href="https://www.elibrary.imf.org/display/book/9798229025881/front-1.xml">View Publication &rarr;</a>
         </div>
 
         <div class="paper-item">
             <span class="tech-tag">Stata</span>
             <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
-            <span class="paper-meta">IMF Asia-Pacific Regional Economic Outlook (Apr 2025)</span>
             <button class="toggle-btn" onclick="toggleCode('code3')">View Stata Logic</button>
             <div id="code3" class="code-block">
-* Panel regression: Impact of Aging on Innovation (Patents)
+* Panel regression: Impact of Aging on Innovation
 xtreg log_patents old_age_dependency log_gdp_pc rd_expenditure i.year, fe cluster(country_id)
             </div>
         </div>
-
-        <div class="paper-item">
-            <span class="paper-title">“Resilient Growth but Higher Risks”</span>
-            <span class="paper-meta">IMF Asia-Pacific Regional Economic Outlook (Oct 2024)</span>
-            <a href="https://www.elibrary.imf.org/display/book/9798400287220/9798400287220.xml">Access Publication &rarr;</a>
+        
         </div>
-
-        <div class="paper-item">
-            <span class="tech-tag">Python & Stata</span>
-            <span class="paper-title">Review of the Bank-Fund Debt Sustainability Framework for Low-Income Countries</span>
-            <span class="paper-meta">Strategic, Policy and Review Department (SPR) | Joint IMF-World Bank</span>
-            <button class="toggle-btn" onclick="toggleCode('code5')">View Data Integration</button>
-            <div id="code5" class="code-block">
-# Python: Compiling DSF historical panel (2017-2023)
-for f in all_files:
-    temp_df = pd.read_excel(f, sheet_name='Summary')
-    panel_data.append(temp_df[['country', 'year', 'dsa_rating']])
-
-# Stata: Transition matrix evaluation
-tab dsa_rating_t dsa_rating_tminus1
-            </div>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-title">Somalia: Heavily Indebted Poor Countries (HIPC) Completion Point Analysis</span>
-            <span class="paper-meta">SPR Department | Dec 2023</span>
-            <span class="bullet">• Modeled debt-relief scenarios and reconciled multilateral creditor data.</span>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-title">UN: Financing for Sustainable Development Report 2023 – Chapter 3</span>
-            <span class="paper-meta">Joint IMF-UN Project | Apr 2023</span>
-            <span class="bullet">• Produced empirical analysis on debt vulnerabilities for emerging markets.</span>
-        </div>
-    </div>
 </body>
 </html>
