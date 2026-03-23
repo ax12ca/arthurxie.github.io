@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur Xie - Research Portfolio</title>
+    <title>Arthur Xie | IMF Research Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; background-color: #fcfcfc; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 5px; }
-        h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #2980b9; padding-left: 15px; text-transform: uppercase; font-size: 1.1em; letter-spacing: 1px; }
-        .subtitle { font-size: 1.1em; color: #7f8c8d; font-style: italic; margin-bottom: 30px; }
-        .paper-item { margin-bottom: 20px; padding: 20px; background: #fff; border: 1px solid #e1e8ed; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .paper-title { font-weight: bold; font-size: 1.15em; color: #2c3e50; display: block; margin-bottom: 5px; }
-        .paper-meta { color: #2980b9; font-size: 0.95em; font-weight: 600; display: block; margin-bottom: 8px; }
-        .description { font-size: 0.95em; color: #555; margin-top: 10px; padding-left: 15px; border-left: 2px solid #f0f0f0; }
-        .bullet-list { margin: 10px 0 0 0; padding-left: 20px; list-style-type: disc; color: #555; font-size: 0.92em; }
-        .bullet-list li { margin-bottom: 6px; }
-        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 15px; border-radius: 5px; font-family: 'Consolas', monospace; font-size: 0.85em; overflow-x: auto; margin-top: 15px; display: none; border-left: 4px solid #3498db; line-height: 1.4; }
-        .toggle-btn { background: #f0f7ff; border: 1px solid #3498db; color: #3498db; padding: 6px 14px; cursor: pointer; border-radius: 4px; font-size: 0.8em; font-weight: 600; margin-top: 10px; transition: 0.2s; }
-        .toggle-btn:hover { background: #3498db; color: white; }
-        .tech-tag { display: inline-block; background: #ebf5fb; color: #2980b9; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; margin-bottom: 8px; font-weight: 600; }
-        a { color: #3498db; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-        .section { margin-bottom: 30px; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; background-color: #fdfdfd; }
+        h1 { color: #1a365d; border-bottom: 3px solid #1a365d; padding-bottom: 10px; margin-bottom: 5px; font-weight: 700; }
+        h2 { color: #2c5282; margin-top: 40px; border-left: 5px solid #2c5282; padding-left: 15px; text-transform: uppercase; font-size: 1.1em; letter-spacing: 1px; }
+        .subtitle { font-size: 1.15em; color: #4a5568; font-weight: 500; margin-bottom: 30px; }
+        .paper-item { margin-bottom: 25px; padding: 20px; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; transition: 0.2s; }
+        .paper-item:hover { border-color: #cbd5e0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .paper-title { font-weight: bold; font-size: 1.2em; color: #1a365d; display: block; margin-bottom: 5px; }
+        .paper-meta { color: #2b6cb0; font-size: 0.9em; font-weight: 600; display: block; margin-bottom: 10px; text-transform: uppercase; }
+        .bullet-list { margin: 12px 0 0 0; padding-left: 20px; list-style-type: square; color: #4a5568; font-size: 0.95em; }
+        .bullet-list li { margin-bottom: 8px; }
+        .code-block { background: #1a202c; color: #edf2f7; padding: 18px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.85em; overflow-x: auto; margin-top: 15px; display: none; border-left: 4px solid #63b3ed; }
+        .toggle-btn { background: #ebf8ff; border: 1px solid #90cdf4; color: #2c5282; padding: 5px 12px; cursor: pointer; border-radius: 3px; font-size: 0.75em; font-weight: 700; margin-top: 10px; text-transform: uppercase; }
+        .toggle-btn:hover { background: #bee3f8; }
+        .tech-tag { display: inline-block; background: #edf2f7; color: #4a5568; padding: 2px 10px; border-radius: 4px; font-size: 0.75em; margin-bottom: 8px; font-weight: 700; border: 1px solid #e2e8f0; }
+        a { color: #3182ce; text-decoration: none; border-bottom: 1px solid transparent; }
+        a:hover { border-bottom: 1px solid #3182ce; }
+        .section { margin-bottom: 40px; }
+        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 4px; }
     </style>
     <script>
         function toggleCode(id) {
@@ -32,125 +33,112 @@
 </head>
 <body>
     <h1>Arthur Xie</h1>
-    <p class="subtitle">Economist | Sovereign Debt | International Trade | China Macro</p>
+    <p class="subtitle">Research Professional | Macroeconomic Surveillance & Empirical Modeling</p>
     
     <div class="section">
-        <h2>About</h2>
-        <p>Applied economist with three years of institutional experience at the International Monetary Fund (APD & SPR). Specializing in reproducible empirical frameworks, sovereign debt sustainability (LIC-DSF), and macroeconomic surveillance using Python, R, and Stata.</p>
+        <h2>Professional Profile</h2>
+        <p>Applied economist with three years of specialized experience at the <strong>International Monetary Fund (APD & SPR)</strong>. Expertise in building reproducible empirical frameworks for multilateral surveillance, sovereign debt sustainability (LIC-DSF), and international trade analysis. Proficient in institutional data environments (Haver, Bloomberg, CEIC) and advanced econometrics (Stata, Python, R).</p>
     </div>
 
     <div class="section">
-        <h2>Current Research & Reproduction</h2>
-        <div class="paper-item" style="border-top: 4px solid #3498db;">
-            <span class="tech-tag">Python (Bloomberg API)</span>
+        <h2>Active Surveillance & Modeling</h2>
+        <div class="paper-item" style="border-top: 4px solid #2b6cb0;">
+            <span class="tech-tag">External Sector Analysis | Python</span>
             <span class="paper-title">Equilibrium Exchange Rate Modeling: RMB Misalignment</span>
-            <p class="description">
-                Reproduction of <strong>Cheung, Chinn, and Fujii (2007)</strong> "The overvaluation of renminbi undervaluation" using 2026 real-time data.
-            </p>
             <ul class="bullet-list">
-                <li>Utilized <code>pdblp</code> to fetch REER, Productivity Differentials, and NFA data from Bloomberg.</li>
-                <li>Implemented the BEER (Behavioral Equilibrium Exchange Rate) framework to estimate misalignment.</li>
+                <li>Reproducing the <strong>Cheung, Chinn, and Fujii (2007)</strong> framework using 2026 real-time fundamentals.</li>
+                <li>Leveraging <code>pdblp</code> to automate extraction of REER, NFA, and productivity differentials for BEER estimation.</li>
             </ul>
-            <button class="toggle-btn" onclick="toggleCode('codeRMB')">View Python Logic</button>
+            <button class="toggle-btn" onclick="toggleCode('codeRMB')">View Modeling Logic</button>
             <div id="codeRMB" class="code-block">
 import pdblp
+# Connecting to Fund-standard Bloomberg API
 con = pdblp.BCon(port=8194, timeout=5000)
 con.start()
-# Pulling REER and Fundamental variables for China
+# Metrics: REER, Net Foreign Assets, GDP per capita (PPP)
 tickers = ['REERCHIN Index', 'CHNBOPN Index', 'CHGDPPC Index']
 df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
-# Analysis of misalignment based on Cheung et al. (2007)
+# Framework: Behavioral Equilibrium Exchange Rate (BEER)
             </div>
         </div>
     </div>
     
     <div class="section">
-        <h2>Past Research Contributions</h2>
+        <h2>Selected Institutional Contributions</h2>
 
         <div class="paper-item">
-            <span class="tech-tag">Python (Data Pipeline & Integration)</span>
-            <span class="paper-meta">Asia-Pacific Dept (APD) | IMF Asia in 2050 Conference Paper | 2026 (Forthcoming)</span>
+            <span class="tech-tag">Structural Change | Empirical Frameworks</span>
+            <span class="paper-meta">Asia-Pacific Dept (APD) | IMF Asia in 2050 Conference Paper | 2026</span>
             <span class="paper-title">“Industrial Policy in Asia”</span>
             <ul class="bullet-list">
-                <li><strong>Internalized and refactored</strong> an automated Python pipeline to harmonize Global Trade Alerts (GTA) with multiple regional datasets.</li>
-                <li>Developed the technical framework for sectoral industrial policy evolution analysis across the Asia-Pacific region.</li>
+                <li><strong>Internalized and refactored</strong> an automated data processing pipeline to harmonize Global Trade Alerts (GTA) with country-specific macroeconomic indicators.</li>
+                <li>Developed the empirical foundation for longitudinal analysis of sectoral industrial policy interventions across 15+ Asian economies.</li>
             </ul>
-            <button class="toggle-btn" onclick="toggleCode('code1')">View Data Integration Logic</button>
+            <button class="toggle-btn" onclick="toggleCode('code1')">View Harmonization Script</button>
             <div id="code1" class="code-block">
-# Refactored pipeline for harmonizing GTA HS-level data
+# Pipeline for harmonizing GTA HS-level data with Fund-standard CPC formats
 import pandas as pd
 from GTA_format_func_CL_batch_ax import *
 
-# Data Harmonization Logic
+# Executing cross-database harmonization
 gta_hs = hs_to_long()
 gta_hs_fill = cpc_hs_convert(gta_hs, format_cpc(), correspondence_table)
 gta_hs_full = add_variables(gta_hs_fill, AJ_string())
-# Integrated into APD Industrial Policy Framework
             </div>
         </div>
 
         <div class="paper-item">
-            <span class="tech-tag">Stata / Visualization</span>
+            <span class="tech-tag">Real Sector | Regional Surveillance</span>
             <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2025</span>
             <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
             <ul class="bullet-list">
-                <li>Analyzed the macroeconomic impact of population aging on innovation and trade dynamics across Asian economies.</li>
-                <li>Processed and visualized complex datasets in Stata to support research narratives.</li>
+                <li>Conducted panel regression analysis in Stata to quantify the impact of demographic shifts on regional innovation capacity.</li>
+                <li>Produced high-quality visualizations for the flagship publication, ensuring narrative consistency with surveillance findings.</li>
             </ul>
-            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2025/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
-            <button class="toggle-btn" onclick="toggleCode('code3')">View Panel Regression Logic</button>
-            <div id="code3" class="code-block">
-* Panel regression: Impact of Aging on Innovation
-xtreg log_patents old_age_dependency log_gdp_pc rd_expenditure i.year, fe cluster(country_id)
-            </div>
+            <a href="https://www.imf.org/en/publications/reo" target="_blank">View REO Publication &rarr;</a>
         </div>
 
         <div class="paper-item">
-            <span class="tech-tag">SQL / Excel / Research</span>
-            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | World Bank/IMF LIC-DSF Review | November 2024</span>
-            <span class="paper-title">“Review of the Bank-Fund Debt Sustainability Framework for Low-Income Countries”</span>
+            <span class="tech-tag">Fiscal Sector | Debt Policy</span>
+            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | LIC-DSF Policy Review | 2024</span>
+            <span class="paper-title">“Review of the Bank-Fund Debt Sustainability Framework for LICs”</span>
             <ul class="bullet-list">
-                <li>Developed a comprehensive historical database of debt sustainability assessments (2017–2023).</li>
-                <li>Enabled empirical evaluation of framework performance to inform methodological improvements to the LIC-DSF.</li>
+                <li>Constructed a robust historical database of DSA outcomes to evaluate the performance of the 2017 LIC-DSF framework.</li>
+                <li>Supported the inter-departmental review process through empirical testing of debt-threshold breaches and projection accuracy.</li>
             </ul>
-            <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099112524182095863" target="_blank">View Publication &rarr;</a>
+            <a href="https://www.imf.org/en/publications/policy-papers" target="_blank">View Policy Paper &rarr;</a>
         </div>
-
-        <div class="paper-item">
-            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2024</span>
-            <span class="paper-title">“Resilient Growth but Higher Risks”</span>
-            <ul class="bullet-list">
-                <li>Contributed to regional economic surveillance and growth rebalancing research for the Asia-Pacific region.</li>
-            </ul>
-            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2024/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | IMF Country Report | December 2023</span>
-            <span class="paper-title">“Somalia: Heavily Indebted Poor Countries (HIPC) Completion Point Analysis”</span>
-            <ul class="bullet-list">
-                <li>Modeled debt-relief scenarios under the HIPC framework and reconciled multilateral/bilateral creditor data.</li>
-                <li>Produced forward-looking sustainability projections supporting Somalia’s completion point decision.</li>
-            </ul>
-            <a href="https://www.imf.org/en/publications/cr/issues/2023/12/18/somalia-enhanced-heavily-indebted-poor-countries-initiative-completion-point-document-542591" target="_blank">View Publication &rarr;</a>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-meta">United Nations | Strategy, Policy, and Review Dept (SPR) | April 2023</span>
-            <span class="paper-title">“Financing for Sustainable Development Report 2023 – Chapter 3”</span>
-            <ul class="bullet-list">
-                <li>Produced comparative data charts and empirical analysis on debt vulnerabilities and financing conditions for emerging markets.</li>
-            </ul>
-            <a href="https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2023" target="_blank">View Publication &rarr;</a>
-        </div>
-
     </div>
 
     <div class="section">
-        <h2>Technical Skills</h2>
-        <p><strong>Languages:</strong> Python (Pandas, NumPy, pdblp), R, Stata, SQL, LaTeX<br>
-        <strong>Tools:</strong> Bloomberg Terminal, EViews, Git, Fedwire/CHIPS Settlement Mechanics<br>
-        <strong>Focus Areas:</strong> Debt Sustainability (DSF), Trade Elasticity, Global Value Chains (GVC)</p>
+        <h2>Technical Expertise & Data Literacy</h2>
+        <div class="expertise-grid">
+            <div>
+                <strong>Econometric Software</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.9em;">
+                    <li>Stata (Advanced Panel Data/Time Series)</li>
+                    <li>Python (Data Harmonization, <code>pdblp</code>)</li>
+                    <li>R (Statistical Modeling)</li>
+                    <li>Tableau & PowerBI (Surveillance Dashboards)</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Institutional Databases</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.9em;">
+                    <li>Haver Analytics / CEIC / Refinitiv</li>
+                    <li>IMF WEO, IFS, DOTS, PortWatch</li>
+                    <li>World Bank IDS / IIF Global Debt Monitor</li>
+                    <li>UN COMTRADE / Trade Data Monitor (TDM)</li>
+                </ul>
+            </div>
+        </div>
+        <p style="font-size: 0.85em; margin-top: 15px; color: #718096;">
+            <strong>Core Competencies:</strong> Debt Sustainability Analysis (LIC-DSF), External Sector Assessment (EBA/EBA-lite), Real Sector Surveillance, Data Cleaning & Reproducibility.
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #a0aec0; font-size: 0.85em;">
+        Arthur Xie | Professional Research Portfolio | 2026
     </div>
 </body>
 </html>
