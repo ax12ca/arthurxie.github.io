@@ -10,7 +10,160 @@
         h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #2980b9; padding-left: 15px; text-transform: uppercase; font-size: 1.1em; letter-spacing: 1px; }
         .subtitle { font-size: 1.1em; color: #7f8c8d; font-style: italic; margin-bottom: 30px; }
         .paper-item { margin-bottom: 20px; padding: 20px; background: #fff; border: 1px solid #e1e8ed; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .paper-title { font-weight: bold; font-size: 1.15em; color: #2c3e<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Xie - Research Portfolio</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; background-color: #fcfcfc; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 5px; }
+        h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #2980b9; padding-left: 15px; text-transform: uppercase; font-size: 1.1em; letter-spacing: 1px; }
+        .subtitle { font-size: 1.1em; color: #7f8c8d; font-style: italic; margin-bottom: 30px; }
+        .paper-item { margin-bottom: 20px; padding: 20px; background: #fff; border: 1px solid #e1e8ed; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
         .paper-title { font-weight: bold; font-size: 1.15em; color: #2c3e50; display: block; margin-bottom: 5px; }
+        .paper-meta { color: #2980b9; font-size: 0.95em; font-weight: 600; display: block; margin-bottom: 8px; }
+        .description { font-size: 0.95em; color: #555; margin-top: 10px; padding-left: 15px; border-left: 2px solid #f0f0f0; }
+        .bullet-list { margin: 10px 0 0 0; padding-left: 20px; list-style-type: disc; color: #555; font-size: 0.92em; }
+        .bullet-list li { margin-bottom: 6px; }
+        .code-block { background: #1e1e1e; color: #dcdcdc; padding: 15px; border-radius: 5px; font-family: 'Consolas', monospace; font-size: 0.85em; overflow-x: auto; margin-top: 15px; display: none; border-left: 4px solid #3498db; line-height: 1.4; }
+        .toggle-btn { background: #f0f7ff; border: 1px solid #3498db; color: #3498db; padding: 6px 14px; cursor: pointer; border-radius: 4px; font-size: 0.8em; font-weight: 600; margin-top: 10px; transition: 0.2s; }
+        .toggle-btn:hover { background: #3498db; color: white; }
+        .tech-tag { display: inline-block; background: #ebf5fb; color: #2980b9; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; margin-bottom: 8px; font-weight: 600; }
+        a { color: #3498db; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        .section { margin-bottom: 30px; }
+    </style>
+    <script>
+        function toggleCode(id) {
+            var x = document.getElementById(id);
+            x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Arthur Xie</h1>
+    <p class="subtitle">Economist | Sovereign Debt | International Trade | China Macro</p>
+    
+    <div class="section">
+        <h2>About</h2>
+        <p>Applied economist with three years of institutional experience at the International Monetary Fund (APD & SPR). Specializing in reproducible empirical frameworks, sovereign debt sustainability (LIC-DSF), and macroeconomic surveillance using Python, R, and Stata.</p>
+    </div>
+
+    <div class="section">
+        <h2>Current Research & Reproduction</h2>
+        <div class="paper-item" style="border-top: 4px solid #3498db;">
+            <span class="tech-tag">Python (Bloomberg API)</span>
+            <span class="paper-title">Equilibrium Exchange Rate Modeling: RMB Misalignment</span>
+            <p class="description">
+                Reproduction of <strong>Cheung, Chinn, and Fujii (2007)</strong> "The overvaluation of renminbi undervaluation" using 2026 real-time data.
+            </p>
+            <ul class="bullet-list">
+                <li>Utilized <code>pdblp</code> to fetch REER, Productivity Differentials, and NFA data from Bloomberg.</li>
+                <li>Implemented the BEER (Behavioral Equilibrium Exchange Rate) framework to estimate misalignment.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleCode('codeRMB')">View Python Logic</button>
+            <div id="codeRMB" class="code-block">
+import pdblp
+con = pdblp.BCon(port=8194, timeout=5000)
+con.start()
+# Pulling REER and Fundamental variables for China
+tickers = ['REERCHIN Index', 'CHNBOPN Index', 'CHGDPPC Index']
+df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
+# Analysis of misalignment based on Cheung et al. (2007)
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Institutional Research & Publications</h2>
+
+        <div class="paper-item">
+            <span class="tech-tag">Python (NLP / Data Engineering)</span>
+            <span class="paper-meta">Asia-Pacific Dept (APD) | IMF Asia in 2050 Conference Paper | 2026 (Forthcoming)</span>
+            <span class="paper-title">“Industrial Policy in Asia”</span>
+            <ul class="bullet-list">
+                <li>Contributed to the construction of a new industrial policy dataset using Python-based text analytics on the Global Trade Alerts database.</li>
+                <li>Developed the empirical foundation for analysis of Asian industrial policy evolution across sectors.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleCode('code1')">View GTA Processing Script</button>
+            <div id="code1" class="code-block">
+# Pipeline for processing Global Trade Alerts (GTA) HS-level data
+import pandas as pd
+from GTA_format_func_CL_batch_ax import *
+
+gta_hs = hs_to_long()
+gta_hs_fill = cpc_hs_convert(gta_hs, format_cpc(), correspondence_table)
+gta_hs_full = add_variables(gta_hs_fill, AJ_string())
+            </div>
+        </div>
+
+        <div class="paper-item">
+            <span class="tech-tag">Stata / Visualization</span>
+            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2025</span>
+            <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
+            <ul class="bullet-list">
+                <li>Analyzed the macroeconomic impact of population aging on innovation and trade dynamics across Asian economies.</li>
+                <li>Processed and visualized complex datasets in Stata to support research narratives.</li>
+            </ul>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2025/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
+            <button class="toggle-btn" onclick="toggleCode('code3')">View Panel Regression Logic</button>
+            <div id="code3" class="code-block">
+* Panel regression: Impact of Aging on Innovation
+xtreg log_patents old_age_dependency log_gdp_pc rd_expenditure i.year, fe cluster(country_id)
+            </div>
+        </div>
+
+        <div class="paper-item">
+            <span class="tech-tag">SQL / Excel / Research</span>
+            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | World Bank/IMF LIC-DSF Review | November 2024</span>
+            <span class="paper-title">“Review of the Bank-Fund Debt Sustainability Framework for Low-Income Countries”</span>
+            <ul class="bullet-list">
+                <li>Developed a comprehensive historical database of debt sustainability assessments (2017–2023).</li>
+                <li>Enabled empirical evaluation of framework performance to inform methodological improvements to the LIC-DSF.</li>
+            </ul>
+            <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099112524182095863" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2024</span>
+            <span class="paper-title">“Resilient Growth but Higher Risks”</span>
+            <ul class="bullet-list">
+                <li>Contributed to regional economic surveillance and growth rebalancing research for the Asia-Pacific region.</li>
+            </ul>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2024/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | IMF Country Report | December 2023</span>
+            <span class="paper-title">“Somalia: Heavily Indebted Poor Countries (HIPC) Completion Point Analysis”</span>
+            <ul class="bullet-list">
+                <li>Modeled debt-relief scenarios under the HIPC framework and reconciled multilateral/bilateral creditor data.</li>
+                <li>Produced forward-looking sustainability projections supporting Somalia’s completion point decision.</li>
+            </ul>
+            <a href="https://www.imf.org/en/publications/cr/issues/2023/12/18/somalia-enhanced-heavily-indebted-poor-countries-initiative-completion-point-document-542591" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">United Nations | Strategy, Policy, and Review Dept (SPR) | April 2023</span>
+            <span class="paper-title">“Financing for Sustainable Development Report 2023 – Chapter 3”</span>
+            <ul class="bullet-list">
+                <li>Produced comparative data charts and empirical analysis on debt vulnerabilities and financing conditions for emerging markets.</li>
+            </ul>
+            <a href="https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2023" target="_blank">View Publication &rarr;</a>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <p><strong>Languages:</strong> Python (Pandas, NumPy, pdblp), R, Stata, SQL, LaTeX<br>
+        <strong>Tools:</strong> Bloomberg Terminal, EViews, Git, Fedwire/CHIPS Settlement Mechanics<br>
+        <strong>Focus Areas:</strong> Debt Sustainability (DSF), Trade Elasticity, Global Value Chains (GVC)</p>
+    </div>
+</body>
+</html>0; display: block; margin-bottom: 5px; }
         .paper-meta { color: #2980b9; font-size: 0.95em; font-weight: 600; display: block; margin-bottom: 8px; }
         .paper-date { float: right; color: #95a5a6; font-size: 0.9em; font-weight: 400; }
         .description { font-size: 0.95em; color: #555; margin-top: 10px; padding-left: 15px; border-left: 2px solid #f0f0f0; }
