@@ -68,22 +68,24 @@ df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
         <h2>Past Research Contributions</h2>
 
         <div class="paper-item">
-            <span class="tech-tag">Python (NLP / Data Engineering)</span>
+            <span class="tech-tag">Python (Data Pipeline & Integration)</span>
             <span class="paper-meta">Asia-Pacific Dept (APD) | IMF Asia in 2050 Conference Paper | 2026 (Forthcoming)</span>
             <span class="paper-title">“Industrial Policy in Asia”</span>
             <ul class="bullet-list">
-                <li>Contributed to the construction of a new industrial policy dataset using Python-based text analytics on the Global Trade Alerts database.</li>
-                <li>Developed the empirical foundation for analysis of Asian industrial policy evolution across sectors.</li>
+                <li><strong>Internalized and refactored</strong> an automated Python pipeline to harmonize Global Trade Alerts (GTA) with multiple regional datasets.</li>
+                <li>Developed the technical framework for sectoral industrial policy evolution analysis across the Asia-Pacific region.</li>
             </ul>
-            <button class="toggle-btn" onclick="toggleCode('code1')">View GTA Processing Script</button>
+            <button class="toggle-btn" onclick="toggleCode('code1')">View Data Integration Logic</button>
             <div id="code1" class="code-block">
-# Pipeline for processing Global Trade Alerts (GTA) HS-level data
+# Refactored pipeline for harmonizing GTA HS-level data
 import pandas as pd
 from GTA_format_func_CL_batch_ax import *
 
+# Data Harmonization Logic
 gta_hs = hs_to_long()
 gta_hs_fill = cpc_hs_convert(gta_hs, format_cpc(), correspondence_table)
 gta_hs_full = add_variables(gta_hs_fill, AJ_string())
+# Integrated into APD Industrial Policy Framework
             </div>
         </div>
 
