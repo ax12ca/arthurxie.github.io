@@ -18,13 +18,10 @@
         .code-block { background: #1a202c; color: #edf2f7; padding: 18px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.85em; overflow-x: auto; margin-top: 15px; display: none; border-left: 4px solid #63b3ed; }
         .toggle-btn { background: #ebf8ff; border: 1px solid #90cdf4; color: #2c5282; padding: 5px 12px; cursor: pointer; border-radius: 3px; font-size: 0.75em; font-weight: 700; margin-top: 10px; text-transform: uppercase; }
         .toggle-btn:hover { background: #bee3f8; }
-        
-        /* CV Button Styling */
         .cv-container { margin-top: 20px; margin-bottom: 30px; }
         .cv-btn { background: #2c5282; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; font-size: 0.95em; text-decoration: none; display: inline-block; border: none; transition: background 0.3s; }
         .cv-btn:hover { background: #1a365d; border-bottom: none !important; }
         .update-note { font-size: 0.85em; color: #718096; margin-left: 12px; font-style: italic; vertical-align: middle; }
-
         .tech-tag { display: inline-block; background: #edf2f7; color: #4a5568; padding: 2px 10px; border-radius: 4px; font-size: 0.75em; margin-bottom: 8px; font-weight: 700; border: 1px solid #e2e8f0; }
         a { color: #3182ce; text-decoration: none; border-bottom: 1px solid transparent; }
         a:hover { border-bottom: 1px solid #3182ce; }
@@ -52,10 +49,10 @@
     <div class="section">
         <h2>About</h2>
         <p>
-            Macroeconomist with a background spanning multilateral policy research and capital markets surveillance. Currently serves as an economist in Hong Kong covering China and Emerging Asia, where responsibilities include monthly economic monitoring, weekly thematic presentations, and the development of quantitative models to evaluate policy transmission and market outcomes.
+            Macroeconomist with a background spanning multilateral policy research and capital markets surveillance. Currently serves as an economist in Hong Kong covering China and Emerging Asia. 
         </p>
         <p>
-            Previously served for three years as a Research Analyst at the International Monetary Fund. Within the Asia-Pacific Department (APD), contributed to the Regional Economic Outlook (REO) through econometric analysis of trade dynamics and industrial policy. Within the Strategy, Policy, and Review Department (SPR), focused on sovereign credit research, LIC-DSF debt sustainability assessments, and the Somalia HIPC restructuring framework. 
+            Previously served for three years as a Research Analyst at the International Monetary Fund across the Asia-Pacific Department (APD) and Strategy, Policy, and Review Department (SPR).
         </p>
     </div>
 
@@ -64,22 +61,17 @@
         <div class="paper-item" style="border-top: 4px solid #2b6cb0;">
             <span class="tech-tag">External Sector | Python (Bloomberg API)</span>
             <span class="paper-title">Equilibrium Exchange Rate Modeling: RMB Misalignment</span>
-            <p style="font-size: 0.95em; color: #4a5568; margin-top: 10px;">
-                Reproduction of the Cheung, Chinn, and Fujii (2007) framework using 2026 real-time fundamentals to assess currency valuation risks.
-            </p>
             <ul class="bullet-list">
-                <li>Utilized pdblp to extract REER, productivity differentials, and NFA data from Bloomberg.</li>
-                <li>Implemented a Behavioral Equilibrium Exchange Rate (BEER) framework to estimate misalignment levels.</li>
+                <li>Reproduction of the Cheung, Chinn, and Fujii (2007) framework using 2026 real-time fundamentals.</li>
+                <li>Utilized pdblp to extract REER, productivity differentials, and NFA data.</li>
             </ul>
             <button class="toggle-btn" onclick="toggleCode('codeRMB')">View Modeling Logic</button>
             <div id="codeRMB" class="code-block">
 import pdblp
 con = pdblp.BCon(port=8194, timeout=5000)
 con.start()
-# Metrics: REER, Net Foreign Assets, GDP per capita (PPP)
 tickers = ['REERCHIN Index', 'CHNBOPN Index', 'CHGDPPC Index']
 df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
-# Framework: Behavioral Equilibrium Exchange Rate (BEER)
             </div>
         </div>
     </div>
@@ -92,53 +84,61 @@ df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
             <span class="paper-meta">Asia-Pacific Dept (APD) | IMF Asia in 2050 Conference Paper | 2026</span>
             <span class="paper-title">“Industrial Policy in Asia”</span>
             <ul class="bullet-list">
-                <li>Refactored an automated Python pipeline to harmonize Global Trade Alerts (GTA) with regional macroeconomic indicators.</li>
-                <li>Established the empirical foundation for longitudinal analysis of sectoral industrial policy interventions in Asia.</li>
+                <li>Refactored an automated Python pipeline to harmonize Global Trade Alerts (GTA) with regional indicators.</li>
             </ul>
             <button class="toggle-btn" onclick="toggleCode('code1')">View Integration Logic</button>
             <a href="https://github.com/arthurx06/IPWG_GTA_Industrial_Policy_Analysis_ax" target="_blank" style="margin-left: 10px; font-size: 0.85em; font-weight: bold;">View Repository &rarr;</a>
-            
             <div id="code1" class="code-block">
-# Pipeline for harmonizing GTA HS-level data with Fund-standard CPC formats
 import pandas as pd
 from GTA_format_func_CL_batch_ax import *
-
 gta_hs = hs_to_long()
-gta_hs_fill = cpc_hs_convert(gta_hs, format_cpc(), correspondence_table)
-gta_hs_full = add_variables(gta_hs_fill, AJ_string())
             </div>
         </div>
 
         <div class="paper-item">
-            <span class="tech-tag">Real Sector | Regional Surveillance</span>
             <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2025</span>
             <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
             <a href="https://www.imf.org/-/media/files/publications/reo/apd/2025/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
         </div>
 
         <div class="paper-item">
-            <span class="tech-tag">Fiscal Sector | Debt Policy</span>
             <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | Policy Review | November 2024</span>
             <span class="paper-title">“Review of the Bank-Fund Debt Sustainability Framework for LICs”</span>
             <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099112524182095863" target="_blank">View Publication &rarr;</a>
         </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2024</span>
+            <span class="paper-title">“Resilient Growth but Higher Risks”</span>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2024/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | Country Report | December 2023</span>
+            <span class="paper-title">“Somalia: Enhanced HIPC Initiative Completion Point Analysis”</span>
+            <a href="https://www.imf.org/en/publications/cr/issues/2023/12/18/somalia-enhanced-heavily-indebted-poor-countries-initiative-completion-point-document-542591" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">United Nations | April 2023</span>
+            <span class="paper-title">“Financing for Sustainable Development Report 2023 – Chapter 3”</span>
+            <a href="https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2023" target="_blank">View Publication &rarr;</a>
+        </div>
     </div>
 
     <div class="section">
-        <h2>Technical Expertise & Data Literacy</h2>
+        <h2>Technical Expertise</h2>
         <div class="expertise-grid">
             <div>
                 <strong>Econometric Software</strong>
-                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em;">
                     <li>Stata, Python (Pandas, pdblp), R</li>
-                    <li>Tableau, PowerBI</li>
                 </ul>
             </div>
             <div>
-                <strong>Specialized Databases</strong>
-                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
-                    <li>Haver Analytics, CEIC, Bloomberg</li>
-                    <li>IMF WEO, IFS, DOTS, PortWatch</li>
+                <strong>Databases</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em;">
+                    <li>Haver, CEIC, Bloomberg, IMF PortWatch</li>
                 </ul>
             </div>
         </div>
