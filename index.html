@@ -71,7 +71,7 @@ df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
         <div class="paper-item">
             <span class="paper-date">2026 (Expected)</span>
             <span class="tech-tag">Python (NLP / Data Engineering)</span>
-            <span class="paper-meta">IMF Asia in 2050 Conference Working Paper | Asia-Pacific Dept (APD)</span>
+            <span class="paper-meta">Asia-Pacific Dept (APD)</span>
             <span class="paper-title">“Industrial Policy in Asia” (Forthcoming)</span>
             <ul class="bullet-list">
                 <li>Contributed to the construction of a new industrial policy dataset using Python-based text analytics on the Global Trade Alerts database.</li>
@@ -86,7 +86,6 @@ from GTA_format_func_CL_batch_ax import *
 gta_hs = hs_to_long()
 gta_hs_fill = cpc_hs_convert(gta_hs, format_cpc(), correspondence_table)
 gta_hs_full = add_variables(gta_hs_fill, AJ_string())
-# Output generated for Asia-Pacific Industrial Policy Working Group
             </div>
         </div>
 
@@ -94,18 +93,12 @@ gta_hs_full = add_variables(gta_hs_fill, AJ_string())
             <span class="paper-date">Oct 2025</span>
             <span class="tech-tag">Stata / Visualization</span>
             <span class="paper-meta">Asia-Pacific Department (APD)</span>
-            <span class="paper-title">“Navigating Trade Headwinds and Rebalancing Growth”</span>
+            <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
             <ul class="bullet-list">
-                <li>Contributed to regional economic surveillance and demographic research analyzing the macroeconomic impact of population aging across Asian economies.</li>
+                <li>Analyzed the macroeconomic impact of population aging on innovation and trade dynamics across Asian economies.</li>
                 <li>Processed and visualized complex datasets in Stata to support research narratives.</li>
             </ul>
-            <a href="https://www.elibrary.imf.org/display/book/9798229025881/front-1.xml" target="_blank">View Publication &rarr;</a>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-date">Apr 2025</span>
-            <span class="paper-meta">Asia-Pacific Department (APD)</span>
-            <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2025/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
             <button class="toggle-btn" onclick="toggleCode('code3')">View Panel Regression Logic</button>
             <div id="code3" class="code-block">
 * Panel regression: Impact of Aging on Innovation
@@ -122,12 +115,17 @@ xtreg log_patents old_age_dependency log_gdp_pc rd_expenditure i.year, fe cluste
                 <li>Developed a comprehensive historical database of debt sustainability assessments (2017–2023).</li>
                 <li>Enabled empirical evaluation of framework performance to inform methodological improvements to the LIC-DSF.</li>
             </ul>
+            <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099112524182095863" target="_blank">View Publication &rarr;</a>
         </div>
 
         <div class="paper-item">
             <span class="paper-date">Oct 2024</span>
             <span class="paper-meta">Asia-Pacific Department (APD)</span>
             <span class="paper-title">“Resilient Growth but Higher Risks”</span>
+            <ul class="bullet-list">
+                <li>Contributed to regional economic surveillance and growth rebalancing research for the Asia-Pacific region.</li>
+            </ul>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2024/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
         </div>
 
         <div class="paper-item">
@@ -138,6 +136,7 @@ xtreg log_patents old_age_dependency log_gdp_pc rd_expenditure i.year, fe cluste
                 <li>Modeled debt-relief scenarios under the HIPC framework and reconciled multilateral/bilateral creditor data.</li>
                 <li>Produced forward-looking sustainability projections supporting Somalia’s completion point decision.</li>
             </ul>
+            <a href="https://www.imf.org/en/publications/cr/issues/2023/12/18/somalia-enhanced-heavily-indebted-poor-countries-initiative-completion-point-document-542591" target="_blank">View Publication &rarr;</a>
         </div>
 
         <div class="paper-item">
@@ -147,6 +146,7 @@ xtreg log_patents old_age_dependency log_gdp_pc rd_expenditure i.year, fe cluste
             <ul class="bullet-list">
                 <li>Produced comparative data charts and empirical analysis on debt vulnerabilities and financing conditions for emerging markets.</li>
             </ul>
+            <a href="https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2023" target="_blank">View Publication &rarr;</a>
         </div>
 
     </div>
