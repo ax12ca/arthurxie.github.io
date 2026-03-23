@@ -8,7 +8,7 @@
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; background-color: #fdfdfd; }
         h1 { color: #1a365d; border-bottom: 3px solid #1a365d; padding-bottom: 10px; margin-bottom: 5px; font-weight: 700; }
         h2 { color: #2c5282; margin-top: 40px; border-left: 5px solid #2c5282; padding-left: 15px; text-transform: uppercase; font-size: 1.1em; letter-spacing: 1px; }
-        .subtitle { font-size: 1.15em; color: #4a5568; font-weight: 500; margin-bottom: 30px; }
+        .subtitle { font-size: 1.15em; color: #4a5568; font-weight: 500; margin-bottom: 10px; }
         .paper-item { margin-bottom: 25px; padding: 20px; background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; transition: 0.2s; }
         .paper-item:hover { border-color: #cbd5e0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .paper-title { font-weight: bold; font-size: 1.2em; color: #1a365d; display: block; margin-bottom: 5px; }
@@ -18,12 +18,19 @@
         .code-block { background: #1a202c; color: #edf2f7; padding: 18px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.85em; overflow-x: auto; margin-top: 15px; display: none; border-left: 4px solid #63b3ed; }
         .toggle-btn { background: #ebf8ff; border: 1px solid #90cdf4; color: #2c5282; padding: 5px 12px; cursor: pointer; border-radius: 3px; font-size: 0.75em; font-weight: 700; margin-top: 10px; text-transform: uppercase; }
         .toggle-btn:hover { background: #bee3f8; }
+        
+        /* CV Button Styling */
+        .cv-container { margin-top: 20px; margin-bottom: 30px; }
+        .cv-btn { background: #2c5282; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; font-size: 0.95em; text-decoration: none; display: inline-block; border: none; transition: background 0.3s; }
+        .cv-btn:hover { background: #1a365d; border-bottom: none !important; }
+        .update-note { font-size: 0.85em; color: #718096; margin-left: 12px; font-style: italic; vertical-align: middle; }
+
         .tech-tag { display: inline-block; background: #edf2f7; color: #4a5568; padding: 2px 10px; border-radius: 4px; font-size: 0.75em; margin-bottom: 8px; font-weight: 700; border: 1px solid #e2e8f0; }
         a { color: #3182ce; text-decoration: none; border-bottom: 1px solid transparent; }
         a:hover { border-bottom: 1px solid #3182ce; }
         .section { margin-bottom: 40px; }
         .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 4px; border: 1px solid #e2e8f0; }
-        .contact-info { font-size: 0.9em; color: #718096; margin-top: 5px; }
+        .contact-info { font-size: 0.95em; color: #4a5568; margin-top: 5px; }
     </style>
     <script>
         function toggleCode(id) {
@@ -37,6 +44,11 @@
     <p class="subtitle">Macroeconomist | Economic Surveillance & Sovereign Risk Researcher</p>
     <p class="contact-info">MA (JHU SAIS), BA (UBC) | Bilingual: English & Mandarin Chinese</p>
     
+    <div class="cv-container">
+        <a href="Resume_ArthurXie_Research_March2026.pdf" class="cv-btn" download>Download Latest CV (PDF)</a>
+        <span class="update-note">Last updated: March 2026</span>
+    </div>
+
     <div class="section">
         <h2>About</h2>
         <p>
@@ -44,9 +56,6 @@
         </p>
         <p>
             Previously served for three years as a Research Analyst at the International Monetary Fund. Within the Asia-Pacific Department (APD), contributed to the Regional Economic Outlook (REO) through econometric analysis of trade dynamics and industrial policy. Within the Strategy, Policy, and Review Department (SPR), focused on sovereign credit research, LIC-DSF debt sustainability assessments, and the Somalia HIPC restructuring framework. 
-        </p>
-        <p>
-            Experienced in integrating LLMs and autonomous agents into research workflows to optimize data harmonization and real-time surveillance across institutional databases.
         </p>
     </div>
 
@@ -104,10 +113,6 @@ gta_hs_full = add_variables(gta_hs_fill, AJ_string())
             <span class="tech-tag">Real Sector | Regional Surveillance</span>
             <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2025</span>
             <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
-            <ul class="bullet-list">
-                <li>Executed panel regression analysis to quantify the impact of demographic shifts on regional innovation capacity.</li>
-                <li>Evaluated macroeconomic spillovers and trade dynamics across 15+ Asian economies.</li>
-            </ul>
             <a href="https://www.imf.org/-/media/files/publications/reo/apd/2025/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
         </div>
 
@@ -115,32 +120,7 @@ gta_hs_full = add_variables(gta_hs_fill, AJ_string())
             <span class="tech-tag">Fiscal Sector | Debt Policy</span>
             <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | Policy Review | November 2024</span>
             <span class="paper-title">“Review of the Bank-Fund Debt Sustainability Framework for LICs”</span>
-            <ul class="bullet-list">
-                <li>Constructed a historical database of DSA outcomes (2017–2023) to evaluate the performance of the LIC-DSF framework.</li>
-                <li>Performed empirical testing of debt-threshold breaches to inform methodological improvements to sovereign risk assessments.</li>
-            </ul>
             <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099112524182095863" target="_blank">View Publication &rarr;</a>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2024</span>
-            <span class="paper-title">“Resilient Growth but Higher Risks”</span>
-            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2024/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | Country Report | December 2023</span>
-            <span class="paper-title">“Somalia: Enhanced HIPC Initiative Completion Point Analysis”</span>
-            <ul class="bullet-list">
-                <li>Modeled debt-relief scenarios and reconciled creditor data to support Somalia’s completion point decision.</li>
-            </ul>
-            <a href="https://www.imf.org/en/publications/cr/issues/2023/12/18/somalia-enhanced-heavily-indebted-poor-countries-initiative-completion-point-document-542591" target="_blank">View Publication &rarr;</a>
-        </div>
-
-        <div class="paper-item">
-            <span class="paper-meta">United Nations | Strategy, Policy, and Review Dept (SPR) | April 2023</span>
-            <span class="paper-title">“Financing for Sustainable Development Report 2023 – Chapter 3”</span>
-            <a href="https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2023" target="_blank">View Publication &rarr;</a>
         </div>
     </div>
 
@@ -152,7 +132,6 @@ gta_hs_full = add_variables(gta_hs_fill, AJ_string())
                 <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
                     <li>Stata, Python (Pandas, pdblp), R</li>
                     <li>Tableau, PowerBI</li>
-                    <li>AI Agent Integration (OpenClaw/LLMs)</li>
                 </ul>
             </div>
             <div>
@@ -160,14 +139,9 @@ gta_hs_full = add_variables(gta_hs_fill, AJ_string())
                 <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
                     <li>Haver Analytics, CEIC, Bloomberg</li>
                     <li>IMF WEO, IFS, DOTS, PortWatch</li>
-                    <li>Refinitiv, TDM, UN COMTRADE</li>
-                    <li>World Bank IDS, IIF Debt Monitor</li>
                 </ul>
             </div>
         </div>
-        <p style="font-size: 0.85em; margin-top: 15px; color: #718096;">
-            <strong>Core Competencies:</strong> Sovereign Debt Sustainability (LIC-DSF), External Sector Assessment, China-ASEAN Spillovers, Data Harmonization, Geopolitical Risk.
-        </p>
     </div>
 
     <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #a0aec0; font-size: 0.85em;">
