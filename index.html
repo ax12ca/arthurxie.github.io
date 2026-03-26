@@ -70,13 +70,92 @@
     </div>
 
     <div class="section">
+        <h2>Current Research & Reproduction</h2>
+        <div class="paper-item" style="border-top: 4px solid #2b6cb0;">
+            <span class="tech-tag">External Sector | Python (Bloomberg API)</span>
+            <span class="paper-title">Equilibrium Exchange Rate Modeling: RMB Misalignment</span>
+            <ul class="bullet-list">
+                <li>Reproduction of the Cheung, Chinn, and Fujii (2007) framework using 2026 real-time fundamentals to assess currency valuation risks.</li>
+                <li>Utilized <strong>pdblp</strong> to extract REER, productivity differentials, and NFA data from Bloomberg.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleCode('codeRMB')">View Modeling Logic</button>
+            <div id="codeRMB" class="code-block">
+import pdblp
+con = pdblp.BCon(port=8194, timeout=5000)
+con.start()
+tickers = ['REERCHIN Index', 'CHNBOPN Index', 'CHGDPPC Index']
+df = con.bdh(tickers, 'PX_LAST', '20100101', '20260315')
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Past Research Contributions</h2>
+
+        <div class="paper-item">
+            <span class="tech-tag">Pipeline Integration | Data Harmonization</span>
+            <span class="paper-meta">Asia-Pacific Dept (APD) | IMF Asia in 2050 Conference Paper | 2026</span>
+            <span class="paper-title">“Industrial Policy in Asia”</span>
+            <ul class="bullet-list">
+                <li>Refactored an automated Python pipeline to harmonize Global Trade Alerts (GTA) with regional macroeconomic indicators.</li>
+                <li>Established the empirical foundation for longitudinal analysis of sectoral industrial policy interventions.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleCode('code1')">View Integration Logic</button>
+            <a href="https://github.com/arthurx06/IPWG_GTA_Industrial_Policy_Analysis_ax" target="_blank" style="margin-left: 10px; font-size: 0.85em; font-weight: bold;">View Repository &rarr;</a>
+            <div id="code1" class="code-block">
+import pandas as pd
+from GTA_format_func_CL_batch_ax import *
+gta_hs = hs_to_long()
+gta_hs_fill = cpc_hs_convert(gta_hs, format_cpc(), correspondence_table)
+            </div>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2025</span>
+            <span class="paper-title">“Navigating Structural Shifts—Aging, Innovation, and Trade”</span>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2025/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Asia-Pacific Dept (APD) | April 2025</span>
+            <span class="paper-title">“Regional Economic Outlook for Asia and Pacific”</span>
+            <p style="font-size: 0.9em; color: #718096; margin-top: 5px;">Note: Contributions focused on internal conjunctural chapter and analytical notes presentation.</p>
+            <a href="https://www.imf.org/en/publications/reo/apac/issues/2025/04/24/regional-economic-outlook-for-asia-and-pacific-april-2025" target="_blank">View Landing Page &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | Policy Review | November 2024</span>
+            <span class="paper-title">“Review of the Bank-Fund Debt Sustainability Framework for LICs”</span>
+            <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099112524182095863" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Asia-Pacific Dept (APD) | Regional Economic Outlook | October 2024</span>
+            <span class="paper-title">“Resilient Growth but Higher Risks”</span>
+            <a href="https://www.imf.org/-/media/files/publications/reo/apd/2024/october/english/text.pdf" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">Strategy, Policy, and Review Dept (SPR) | Country Report | December 2023</span>
+            <span class="paper-title">“Somalia: Enhanced HIPC Initiative Completion Point Analysis”</span>
+            <a href="https://www.imf.org/en/publications/cr/issues/2023/12/18/somalia-enhanced-heavily-indebted-poor-countries-initiative-completion-point-document-542591" target="_blank">View Publication &rarr;</a>
+        </div>
+
+        <div class="paper-item">
+            <span class="paper-meta">United Nations | April 2023</span>
+            <span class="paper-title">“Financing for Sustainable Development Report 2023 – Chapter 3”</span>
+            <a href="https://financing.desa.un.org/iatf/report/financing-sustainable-development-report-2023" target="_blank">View Publication &rarr;</a>
+        </div>
+    </div>
+
+    <div class="section">
         <h2>Other Publications</h2>
         
         <div class="paper-item">
             <span class="paper-meta">Asia-Pacific Foundation of Canada | Policy & Public Opinion Analysis</span>
             <span class="paper-title">“Energy Exports and Asia: Divergent Western Canadian Perspectives”</span>
             <div class="institution-note">
-                The Asia-Pacific Foundation of Canada (Fondation Asie Pacifique du Canada) is a statutory non-profit organization established in 1984 by an Act of Parliament (the Asia-Pacific Foundation of Canada Act) to serve as Canada's leading center for Asia-Pacific relations.
+                The Asia-Pacific Foundation of Canada (Fondation Asie Pacifique du Canada) was created by an Act of Parliament in 1984 (the Asia-Pacific Foundation of Canada Act) to serve as Canada's leading center for research and analysis on Asia-Pacific relations.
             </div>
             <a href="https://www.asiapacific.ca/blog/energy-exports-and-asia-divergent-western-canadian" target="_blank" style="display:inline-block; margin-top:10px;">View Article &rarr;</a>
         </div>
@@ -94,6 +173,50 @@
             <span class="paper-meta">Caixin Global | Photo Essay</span>
             <span class="paper-title">“Photo Essay: Confucius Says Congratulations on Completing Kindergarten”</span>
             <a href="https://www.caixinglobal.com/2017-07-28/photo-essay-confucius-says-congratulations-on-completing-kindergarten-101123533.html" target="_blank">View Article &rarr;</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Awards and Affiliations</h2>
+        <div class="expertise-grid">
+            <div>
+                <strong>Awards</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
+                    <li><strong>IMF Outstanding Rating:</strong> Highest performance rating awarded in the 2023–24 Annual Performance Review cycle.</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Professional Affiliations</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
+                    <li><a href="https://web.archive.org/web/20240317000813/https://nabe.com/NABE/NABE_Foundation/2023_24_NABE_Scholars.aspx" target="_blank">NABE Scholar (2023-24)</a> - National Association for Business Economics</li>
+                    <li><a href="https://canadachinaforum.ca/2021/09/canada-china-forum-welcomes-second-cohort/" target="_blank">Canada China Forum</a> - Second Cohort Member</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Technical Expertise & Data Literacy</h2>
+        <div class="expertise-grid">
+            <div>
+                <strong>Econometric Software & Visualization</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
+                    <li>STATA, Python (Pandas, pdblp), R</li>
+                    <li>Tableau, PowerBI</li>
+                    <li>AI Agent Integration (OpenClaw/LLMs)</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Specialized Databases</strong>
+                <ul style="margin: 5px 0; padding-left: 15px; font-size: 0.92em; color: #4a5568;">
+                    <li>Bloomberg Terminal, Haver Analytics, CEIC, Refinitiv</li>
+                    <li>UN COMTRADE, Trade Data Monitor (TDM), Capital IQ Pro</li>
+                    <li>Orbis, Cbonds, Global Trade Alert (GTA)</li>
+                    <li>IMF WEO, IFS, DOTS, Port Watch</li>
+                    <li>World Bank IDS, IIF (Debt Monitor, Capital Flows)</li>
+                    <li>Netherlands Bureau for Economic Policy Analysis (CPB)</li>
+                </ul>
+            </div>
         </div>
     </div>
 
